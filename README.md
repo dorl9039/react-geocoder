@@ -17,8 +17,6 @@ The web app also displays:
 * The latitudinal coordinate of the search result
 * The longitudinal coordinate of the search result
 
-### Enhancements
-
 The web app makes a call to a proxy server that uses the LocationIQ Search/Forward Geocoding API. In the case of an unsuccessful call, the web app does not crash but instead displays an error message.
 
 The web app also includes a search history section that displays a list of all search queries that have been made, along with their latitude and longitude values. Results persist even after an invalid location search.
