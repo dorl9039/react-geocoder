@@ -17,6 +17,9 @@ function App() {
       setLonData(lon);
       setLatData(lat);
       setCityData(city);
+
+      const newResult = {latData: lat, lonData: lon, cityData: city}
+      addHistoryData(newResult)
     })
     .catch(err => {
       console.log(err)
@@ -27,6 +30,10 @@ function App() {
   const [latData, setLatData] = useState(0);
   const [resultHistoryData, setResultHistoryData] = useState([]);
   
+  const addHistoryData = newResult => {
+    setResultHistoryData(results => [...results, newResult])
+  }
+
   return (
     <div className="App">
       <h1>Get Latitude and Longitude</h1>
@@ -35,6 +42,7 @@ function App() {
         cityData={cityData} 
         lonData={lonData} 
         latData={latData}
+        onUpdate={addHistoryData}
       />
       <ResultHistory resultHistory={resultHistoryData}/>
     </div>
