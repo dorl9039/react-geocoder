@@ -27,8 +27,8 @@ function App() {
       })
   }
   const [cityData, setCityData] = useState('');
-  const [lonData, setLonData] = useState(0);
-  const [latData, setLatData] = useState(0);
+  const [lonData, setLonData] = useState('');
+  const [latData, setLatData] = useState('');
   const [errorState, setErrorState] = useState(false);
   const [resultHistoryData, setResultHistoryData] = useState([]);
   

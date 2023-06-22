@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './ResultRecord.css';
+
 const ResultRecord = (props) => {
     return (
         <div className='record'>
