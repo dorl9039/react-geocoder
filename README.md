@@ -23,7 +23,7 @@ The web app makes a call to a proxy server that uses the LocationIQ Search/Forwa
 
 The web app also includes a search history section that displays a list of all search queries that have been made, along with their latitude and longitude values. Results persist even after an invalid location search.
 
-### Implementation results
+### Implementation screenshots
 <img width="1042" alt="image" src="https://github.com/dorl9039/react-geocoder/assets/121260645/160139dc-be25-4df9-91ab-5593259eb72e">
 <img width="1040" alt="image" src="https://github.com/dorl9039/react-geocoder/assets/121260645/eb20024f-9ceb-4a39-bba0-fa2d5442f7e9">
 <img width="1037" alt="image" src="https://github.com/dorl9039/react-geocoder/assets/121260645/4ffd4f5d-847e-40b3-bb51-3349976bcfea">
