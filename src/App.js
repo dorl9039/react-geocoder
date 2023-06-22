@@ -7,25 +7,34 @@ import SearchResult from './components/SearchResult.js';
 import ResultHistory from './components/ResultHistory.js';
 import ErrorAlert from './components/ErrorAlert.js';
 
-function App() {
-  const handleLonLat = city => {
-    axios.get('https://weather-report-proxy-server-vaa7.onrender.com/location', {
-      params: {q: city}
-    })
-    .then(response => {
+const getLonLat = city => {
+  return axios
+  .get('https://weather-report-proxy-server-vaa7.onrender.com/location', {
+    params: {q: city}
+  })
+  .then(response => {
       const lat = response.data[0].lat;
       const lon = response.data[0].lon;
-      setLonData(lon);
-      setLatData(lat);
+      return {lat, lon}
+    });
+};
+
+function App() {
+  
+  const updateLonLat = (city) => {
+    return getLonLat(city)
+    .then(response => {
+      setLonData(response.lon);
+      setLatData(response.lat);
       setCityData(city);
       setErrorState(false);
-      const newResult = {latData: lat, lonData: lon, cityData: city};
-      addHistoryData(newResult);
+      addHistoryData({latData: response.lat, lonData: response.lon, cityData: city});
     })
     .catch(err => {
       setErrorState(true);
-      })
-  }
+    });
+  };
+
   const [cityData, setCityData] = useState('');
   const [lonData, setLonData] = useState('');
   const [latData, setLatData] = useState('');
@@ -39,7 +48,7 @@ function App() {
   return (
     <div className="App">
       <h1>Get Latitude and Longitude</h1>
-      <SearchForm handleLonLat={handleLonLat}/>
+      <SearchForm updateLonLat={updateLonLat}/>
       <SearchResult 
         cityData={cityData} 
         lonData={lonData} 

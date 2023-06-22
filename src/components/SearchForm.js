@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 
 const SearchForm = (props) => {
     const [locationName, setLocationName] = useState('')
-
     const onFormSubmit = event => {
         event.preventDefault();
-        props.handleLonLat(locationName);
+        props.updateLonLat(locationName);
         setLocationName('');
     };
     const onLocationChange = event => {
