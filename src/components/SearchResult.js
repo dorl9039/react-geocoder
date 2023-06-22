@@ -6,8 +6,8 @@ const SearchResult = (props) => {
         <div className='results-container'>
             <h2>Results for: {props.cityData}</h2>
             <ul>
-                <li>Latitude: {props.latData}</li>
-                <li>Longitude: {props.lonData}</li>
+                <li>Longitude: {props.lonLatData.lon}</li>
+                <li>Latitude: {props.lonLatData.lat}</li>
             </ul>
         </div>
     );
