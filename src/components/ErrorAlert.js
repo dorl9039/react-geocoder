@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './ErrorAlert.css'
 
 const ErrorAlert = (props) => {
@@ -10,4 +11,9 @@ const ErrorAlert = (props) => {
             </div>)
     );
 }
+
+ErrorAlert.propTypes = {
+    errorState: PropTypes.bool.isRequired
+}
+
 export default ErrorAlert;

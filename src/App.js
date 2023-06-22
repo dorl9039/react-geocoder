@@ -26,7 +26,7 @@ function App() {
             setLonLatData(response)
             setCityData(city);
             setErrorState(false);
-            addHistoryData({latData: response.lat, lonData: response.lon, cityData: city});
+            addHistoryData({lonLatData: response, cityData: city});
         })
         .catch(err => {
             setErrorState(true);
@@ -49,7 +49,6 @@ function App() {
         <SearchResult 
             cityData={cityData} 
             lonLatData={lonLatData} 
-            onUpdate={addHistoryData}
         />
         <ErrorAlert errorState={errorState} />
         <ResultHistory resultHistory={resultHistoryData}/>

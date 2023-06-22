@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const SearchForm = (props) => {
     const [locationName, setLocationName] = useState('')
@@ -24,6 +25,10 @@ const SearchForm = (props) => {
                 value="Search Now!" />
         </form>
     );
+}
+
+SearchForm.propTypes = {
+    updateLonLat: PropTypes.func.isRequired
 }
 
 export default SearchForm;

@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ResultRecord from './ResultRecord.js'
-
 import './ResultHistory.css'
 
 const ResultHistory = (props) => {
@@ -9,8 +9,7 @@ const ResultHistory = (props) => {
             <li key={i}>
                 <ResultRecord 
                 city={record.cityData}
-                lat={record.latData}
-                lon={record.lonData}
+                lonLat={record.lonLatData}
                 />
             </li>
         );
@@ -23,6 +22,10 @@ const ResultHistory = (props) => {
             </ul>
         </div>
     );
+}
+
+ResultHistory.propTypes = {
+    resultHistory: PropTypes.array.isRequired
 }
 
 export default ResultHistory;

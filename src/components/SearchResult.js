@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './SearchResult.css'
 
 const SearchResult = (props) => {
@@ -12,5 +13,8 @@ const SearchResult = (props) => {
         </div>
     );
 }
-
+SearchResult.propTypes = {
+    cityData: PropTypes.string.isRequired,
+    lonLatData: PropTypes.object.isRequired,
+};
 export default SearchResult;
