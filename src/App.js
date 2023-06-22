@@ -30,6 +30,8 @@ function App() {
         })
         .catch(err => {
             setErrorState(true);
+            setLonLatData({})
+            setCityData(city)
         });
     };
 
@@ -44,7 +46,7 @@ function App() {
 
     return (
         <div className="App">
-        <h1>Get Latitude and Longitude</h1>
+        <h1>Get Longitude and Latitude</h1>
         <SearchForm updateLonLat={updateLonLat}/>
         <SearchResult 
             cityData={cityData} 
