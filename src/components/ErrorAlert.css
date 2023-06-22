@@ -1,0 +1,11 @@
+.error-alert-container {
+    border: solid red 2px;
+    border-radius: 5px;
+    background-color: lightsalmon;
+    width: 70%;
+    margin: auto;
+}
+
+.error-alert-container p {
+    padding-bottom: 10px;
+}

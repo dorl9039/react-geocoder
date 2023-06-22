@@ -5,6 +5,7 @@ import './App.css';
 import SearchForm from './components/SearchForm.js';
 import SearchResult from './components/SearchResult.js';
 import ResultHistory from './components/ResultHistory.js';
+import ErrorAlert from './components/ErrorAlert.js';
 
 function App() {
   const handleLonLat = city => {
@@ -17,17 +18,18 @@ function App() {
       setLonData(lon);
       setLatData(lat);
       setCityData(city);
-
-      const newResult = {latData: lat, lonData: lon, cityData: city}
-      addHistoryData(newResult)
+      setErrorState(false);
+      const newResult = {latData: lat, lonData: lon, cityData: city};
+      addHistoryData(newResult);
     })
     .catch(err => {
-      console.log(err)
+      setErrorState(true);
       })
   }
   const [cityData, setCityData] = useState('');
   const [lonData, setLonData] = useState(0);
   const [latData, setLatData] = useState(0);
+  const [errorState, setErrorState] = useState(false);
   const [resultHistoryData, setResultHistoryData] = useState([]);
   
   const addHistoryData = newResult => {
@@ -44,6 +46,7 @@ function App() {
         latData={latData}
         onUpdate={addHistoryData}
       />
+      <ErrorAlert errorState={errorState} />
       <ResultHistory resultHistory={resultHistoryData}/>
     </div>
   );
