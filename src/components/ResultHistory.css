@@ -1,0 +1,18 @@
+.result-history-container {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.result-history-container ul {
+    padding-left: 0px;
+    list-style-type: none;
+    margin-top: 0px;
+}
+
+.result-history-container h2 {
+    margin-bottom: 5px;
+}
